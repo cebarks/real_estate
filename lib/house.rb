@@ -12,4 +12,16 @@ class House
   def add_room(room)
     @rooms << room
   end
+
+  def area
+    @rooms.sum do |room|
+      room.area
+    end
+  end
+
+  def rooms_from_catagory(catagory)
+    @rooms.select do |room|
+      room.catagory == catagory
+    end
+  end
 end
