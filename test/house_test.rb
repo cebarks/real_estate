@@ -11,11 +11,11 @@ class RoomTest < Minitest::Test
   end
 
   def test_it_creates
-    assert_instance_of Room, @room
+    assert_instance_of House, @house
   end
 
   def test_its_the_correct_price
-    assert_equal :bedroom, @room.catagory
+    assert_equal 400000, @house.price
   end
 
   def test_its_the_correct_address
@@ -27,8 +27,8 @@ class RoomTest < Minitest::Test
   end
 
   def test_it_can_add_rooms
-    @house.add_room(room_1)
-    @house.add_room(room_2)
+    @house.add_room(@room_1)
+    @house.add_room(@room_2)
     assert_equal [@room_1, @room_2], @house.rooms
   end
 end
